@@ -16,23 +16,6 @@ namespace Khurupan.Controllers
         }
 
         //***Bad smell Duplicated Code (โค้ดที่ซ้ำกัน)
-        [Authorize(Roles = "Admin")]
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        //***Bad smell Duplicated Code (โค้ดที่ซ้ำกัน)
-        // /Khurupan/AllKhurupan
-        [HttpGet]
-        [Route("AllKhurupan")]
-        [Authorize(Roles = "Admin")]
-        public IActionResult AllKhurupan()
-        {
-            IEnumerable<Khurupans> allKhurupan = _db.Khurupans;
-
-            return Ok(allKhurupan);
-        }
 
         // /Khurupan/KhurupanIndex
         [HttpGet]
